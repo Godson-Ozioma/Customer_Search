@@ -1,0 +1,43 @@
+@page "/addCustomer"
+@rendermode InteractiveServer
+
+<h1>Add a Customer</h1>
+
+<p class="text-primary">@message</p>
+
+<div class="mb-3">
+    <label for="firstname" class="form-label">FirstName</label>
+    <input id="firstname" class="form-control" @bind="firstname" />
+</div>
+
+<div class="mb-3">
+    <label for="lastname" class="form-label">LastName</label>
+    <input id="lastname" class="form-control" @bind="lastname" />
+</div>
+
+<div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="email" class="form-control" @bind="email" />
+</div>
+
+<div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input id="phone" class="form-control" @bind="phone" />
+</div>
+
+<div class="mb-3">
+    <label for="phone" class="form-label">Address</label>
+    <input id="address" class="form-control" @bind="address" />
+</div>
+
+<div class="mb-3">
+    <label for="postcode" class="form-label">PostCode</label>
+    <input id="postcode" class="form-control" @bind="postcode" />
+</div>
+
+<div class="mb-3">
+    <label for="country" class="form-label">Country</label>
+    <input id="country" class="form-control" @bind="country" />
+</div>
+
+<button type="submit" @onclick="HandleValidSubmit" class="btn btn-primary">Add Customer</button>

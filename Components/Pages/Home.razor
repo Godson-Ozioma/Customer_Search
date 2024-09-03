@@ -1,0 +1,48 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Customer Search</h1>
+
+<div class="d-flex justify-content-between">
+    <div class="search-form">
+        <input @bind="query" placeholder="Enter Postcode..." />
+        <input type='submit' @onclick = "GetUserByPostCode" />
+    </div>
+
+    <!-- Link on the right side -->
+    <NavLink href="/addCustomer" class="ms-auto btn btn-primary">Add a Customer</NavLink>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>PostCode</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        <p class="text-danger">@message</p>
+        @foreach (var customer in customers){
+            <tr>
+                <td>@customer.FirstName</td>
+                <td>@customer.LastName</td>
+                <td>@customer.Email</td>
+                <td>@customer.Phone</td>
+                <td>@customer.Postcode</td>
+                <td>@customer.Country</td>
+            </tr>
+        }
+    </tbody>
+
+
+
+
+        
+</table>
